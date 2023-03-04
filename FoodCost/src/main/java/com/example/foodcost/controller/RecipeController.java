@@ -1,18 +1,19 @@
 package com.example.foodcost.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
 import com.example.foodcost.service.RecipeService;
-@Controller
+import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@AllArgsConstructor
+@RequestMapping("/v1") // all api declared here will be with a /v1.... ex. /v1/{recipeName}
 public class RecipeController {
 
-	@Autowired RecipeService recipeService;
-	
-	@RequestMapping(method = RequestMethod.POST)
-		public void recipeNameSet(String recipeName) {
-			recipeService.recipeName(recipeName);
-	}
+    private final RecipeService recipeService;
+
+    @RequestMapping(method = RequestMethod.POST, path = "/{recipeName}")
+    public void recipeNameSet(@PathVariable String recipeName) {
+        recipeService.recipeName(recipeName);
+    }
 }

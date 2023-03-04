@@ -1,16 +1,10 @@
 package com.example.foodcost.repo;
 
-import java.io.Serializable;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 import com.example.foodcost.entity.Recipe;
-import com.example.foodcost.service.RecipeService;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
 @Repository
-
-public interface RecipeRepo	extends CrudRepository<Recipe, String>{
-
-
+public interface RecipeRepo extends JpaRepository<Recipe, String> {
 
 }
