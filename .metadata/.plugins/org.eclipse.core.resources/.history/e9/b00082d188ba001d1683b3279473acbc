@@ -1,0 +1,5 @@
+package com.example.foodcost.repo;
+
+public interface recipeRepo {
+
+}

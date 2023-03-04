@@ -1,0 +1,16 @@
+package com.example.foodcost.service;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.example.foodcost.controller.RecipeController;
+import com.example.foodcost.entity.Recipe;
+
+@Service
+public class RecipeService {
+	@Autowired Recipe recipe ;
+	@PostMapping
+	public String recipeName( String recipeName) {
+		recipe.setRecipeName(recipeName);
+	}
+}

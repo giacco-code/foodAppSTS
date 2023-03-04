@@ -1,0 +1,77 @@
+package com.example.foodcost.entity;
+
+import java.util.Arrays;
+import java.util.Objects;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Recipe {
+	  @Id
+	  private String nomeRicetta;
+	  
+	  private String[] ingredienti;
+	
+	  private Integer[] quantita;
+
+	  
+	  
+	  
+	  
+	public Recipe(String nomeRicetta, String[] ingredienti, Integer[] quantita) {
+		super();
+		this.nomeRicetta = nomeRicetta;
+		this.ingredienti = ingredienti;
+		this.quantita = quantita;
+	}
+
+
+	public String getNomeRicetta() {
+		return nomeRicetta;
+	}
+
+	
+	public void setNomeRicetta(String nomeRicetta) {
+		this.nomeRicetta = nomeRicetta;
+	}
+
+	public String[] getIngredienti() {
+		return ingredienti;
+	}
+
+	public void setIngredienti(String[] ingredienti) {
+		this.ingredienti = ingredienti;
+	}
+
+	public Integer[] getQuantita() {
+		return quantita;
+	}
+
+	public void setQuantita(Integer[] quantita) {
+		this.quantita = quantita;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(ingredienti);
+		result = prime * result + Arrays.hashCode(quantita);
+		result = prime * result + Objects.hash(nomeRicetta);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Recipe other = (Recipe) obj;
+		return Arrays.equals(ingredienti, other.ingredienti) && Objects.equals(nomeRicetta, other.nomeRicetta)
+				&& Arrays.equals(quantita, other.quantita);
+	}
+}

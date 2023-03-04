@@ -1,0 +1,11 @@
+# DATASOURCE 
+## H2 ## 
+spring: 
+    datasource: 
+        url: jdbc:h2:mem:foodDB 
+        username: root	 
+        password: 1234
+    # JPA - Hibernate 
+    jpa: 
+        hibernate: 
+            ddl-auto: update

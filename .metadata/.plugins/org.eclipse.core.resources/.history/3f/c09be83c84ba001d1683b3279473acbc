@@ -1,0 +1,5 @@
+package com.example.foodcost.controller;
+
+public class RecipeController {
+
+}

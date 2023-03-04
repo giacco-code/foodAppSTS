@@ -1,0 +1,11 @@
+package com.example.foodcost.repo;
+
+import java.io.Serializable;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+import com.example.foodcost.entity.Recipe;
+@Repository
+public interface RecipeRepo<T, ID extends Serializable>  extends CrudRepository<T, ID>{
+
+}
