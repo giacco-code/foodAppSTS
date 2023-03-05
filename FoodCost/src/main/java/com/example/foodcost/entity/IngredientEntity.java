@@ -9,11 +9,12 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Ingredient {
+public class IngredientEntity {
     @Id
     private String id;
     @NonNull
     private String name;
+    private String description;
     @NonNull
-    private Integer qty;
+    private Integer qty; // gr?
 }

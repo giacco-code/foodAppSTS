@@ -15,12 +15,12 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode
-public class Recipe {
+public class RecipeEntity {
     @Id
     private String id;
     private String recipeName;
 
     @OneToMany
-    private List<Ingredient> ingredients;
+    private List<IngredientEntity> ingredientEntities;
 
 }
